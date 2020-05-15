@@ -7,7 +7,7 @@
   <persistence-unit name="HPCharacters">
     <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
-	<class>com.skilldistillery.jpavideostore.entities.FIXME</class>
+	<class>com.skilldistillery.hpcharacters.entities.HPCharacter</class>
 
 	
     <properties>
