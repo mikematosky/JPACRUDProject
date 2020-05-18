@@ -2,6 +2,7 @@ package com.skilldistillery.hpcharacters.entities;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -44,7 +45,18 @@ class HpCharacterTest {
 	@Test
 	void test() {
 		assertNotNull(harry);
-		assertEquals("", harry.getName());
+		assertEquals("Harry", harry.getFirstName());
+		assertEquals("Potter", harry.getLastName());
+		assertEquals("The boy who lived. Main protagonist and target of Death Eaters.", harry.getDescription());
+		assertEquals("Human", harry.getType());
+		assertTrue(harry.isMale());
+		assertEquals(House.Gryffindore, harry.getHouse());
+		assertEquals(7, harry.getNumOfBooks());
+		assertEquals(false, harry.isDead());
+		assertEquals(false, harry.isWasDeathEater());
+		assertEquals("Harry received a (P) for \"Poor\" in Divination.", harry.getTrivia());
+		assertEquals("https://assets.readbrightly.com/wp-content/uploads/2015/09/harry_potter_featured-768x550.gif", harry.getImageLink());
+		
 	}
 
 }
