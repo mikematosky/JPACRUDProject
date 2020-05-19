@@ -17,7 +17,7 @@ public class HPCharacter {
 	private String firstName;
 	private String lastName;
 	private String description;
-	private String type;
+	private Type type;
 	private boolean isMale;
 	private House house;
 	private Integer numOfBooks;
@@ -31,7 +31,7 @@ public class HPCharacter {
 	
 	
 	//Character with no Last Name
-	public HPCharacter(String first, String descript, String type, House house, boolean gender,
+	public HPCharacter(String first, String descript, Type type, House house, boolean gender,
 						boolean isDead, boolean wasDE, Integer books ) {
 		firstName= first;
 		description= descript;
@@ -44,7 +44,7 @@ public class HPCharacter {
 	}
 	
 	//Character with a Last Name
-	public HPCharacter(String first, String last, String descript, String type, House house, boolean gender,
+	public HPCharacter(String first, String last, String descript, Type type, House house, boolean gender,
 			boolean isDead, boolean wasDE, Integer books ) {
 		firstName= first;
 		lastName= last;
@@ -101,13 +101,13 @@ public class HPCharacter {
 
 
 
-	public String getType() {
+	public Type getType() {
 		return type;
 	}
 
 
 
-	public void setType(String type) {
+	public void setType(Type type) {
 		this.type = type;
 	}
 
