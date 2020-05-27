@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style> body{"https://i.ebayimg.com/images/g/dkcAAOSwfURdMBXi/s-l500.jpg";}</style>
 <link rel="stylesheet" type="text/css" href="styles.css">
 <meta charset="UTF-8">
 <title>Harry Potter Characters</title>
