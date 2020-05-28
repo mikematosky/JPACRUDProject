@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.skilldistillery.hpcharacters.data.HPCharDAO;
 
 @Controller
-public class HPCharController {
+public class HPController {
 
 	@Autowired
 	private HPCharDAO dao;
@@ -16,8 +16,5 @@ public class HPCharController {
 	public String index() {
 		return "index";
 	}
-	
-	//
-	
 	
 }

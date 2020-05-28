@@ -25,10 +25,10 @@
 	<br>
 	<a href="character_popout.do">Single Character</a>
 	<br>
-	<a href="gryff.do">Gryffindor House</a><a href="slyth.do">Slytherin House</a>
-	<a href="raven.do">Ravenclaw House</a><a href="huff.do">Hufflepuff House</a>
+	<a href="gryff.do">Gryffindor</a>.  .<a href="slyth.do">Slytherin</a>.  .
+	<a href="raven.do">Ravenclaw</a>.  .<a href="huff.do">Hufflepuff</a>
 	<br>
-	<a href="bad_guys.do">Death Eaters</a><a href="good_guys.do">Non-Death Eaters</a>
+	<a href="bad_guys.do">Death Eaters</a>.  .<a href="good_guys.do">Non-Death Eaters</a>
 	<br>
 	<a href="search.do">Search</a>
 	
