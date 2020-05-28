@@ -17,5 +17,20 @@
 	<hr>
 	<br>
 	<p>I hate html and css and javascript, but I have to do this. Does my css work?</p>
+	<hr>
+	<br>
+	<a href="create_edit.do">Create</a>
+	<br>
+	<a href="list.do">All Characters</a>
+	<br>
+	<a href="character_popout.do">Single Character</a>
+	<br>
+	<a href="gryff.do">Gryffindor House</a><a href="slyth.do">Slytherin House</a>
+	<a href="raven.do">Ravenclaw House</a><a href="huff.do">Hufflepuff House</a>
+	<br>
+	<a href="bad_guys.do">Death Eaters</a><a href="good_guys.do">Non-Death Eaters</a>
+	<br>
+	<a href="search.do">Search</a>
+	
 </body>
 </html>

@@ -12,6 +12,7 @@ public interface HPCharDAO {
 	HPCharacter create(HPCharacter character);
 	//R
 	HPCharacter findByID(int id);
+	List<HPCharacter> getByKeywordSearch(String keyword);
 	List<HPCharacter> getAllCharacters();
 	List<HPCharacter> getFromHouse(House house);
 	List<HPCharacter> getFromType(Type type);

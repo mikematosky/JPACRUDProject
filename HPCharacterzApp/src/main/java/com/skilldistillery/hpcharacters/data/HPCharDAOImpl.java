@@ -102,6 +102,20 @@ public class HPCharDAOImpl implements HPCharDAO{
 		}
 		return filtered;
 	}
+	
+	@Override
+	public List<HPCharacter> getByKeywordSearch(String keyword){
+		String query= "SELECT c FROM hp_characters c WHERE c.firstName OR c.lastName OR c.description"
+				+ "OR c.house OR c.type OR c.trivia LIKE '"+"%"+keyword+"%'";
+		List<HPCharacter> list = em.createQuery(query, HPCharacter.class).getResultList();
+		List<HPCharacter> filtered= new ArrayList<>(list);
+		for (HPCharacter c : list) {
+			if(c.isDisabled()== true) {
+				filtered.remove(c);
+			}
+		}
+		return filtered;
+	}
 
 	@Override
 	public HPCharacter edit(HPCharacter updated) {
