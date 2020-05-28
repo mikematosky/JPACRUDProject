@@ -1,13 +1,18 @@
  @charset "UTF-8";
 
 h1 {
-	color: red;
-	background-color: RGB(197, 172, 151); 
+	text-align: center;
+	color: black;
 	padding: 10px;
 }
 	
 body {
+	/* background-image: url("https://thecutestblogontheblock.com/wp-content/uploads/2011/11/harry-potter-battle-copy-576x288.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-attachment: fixed;
 	color: red;
-	padding: 0;
-	margin: 0;
+	*/
+	padding: 10px;
+	margin: 10px;
 }	

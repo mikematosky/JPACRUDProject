@@ -18,7 +18,7 @@ public interface HPCharDAO {
 	List<HPCharacter> getAllDeathEaters();
 	List<HPCharacter> getAllNonDeathEaters();
 	//U
-	HPCharacter edit(int id);
+	HPCharacter edit(HPCharacter character);
 	//D
 	boolean delete(int id);
 	

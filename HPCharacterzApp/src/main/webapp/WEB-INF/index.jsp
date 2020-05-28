@@ -8,7 +8,7 @@
 <title>Harry Potter Characters</title>
 </head>
 <body>
-	<h1>Mike's Harry Potter Character Database</h1>
+	<h1>Character Database</h1>
 	<br>
 	<hr>
 	<br>

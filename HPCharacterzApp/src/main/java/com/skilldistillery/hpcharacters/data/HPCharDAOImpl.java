@@ -2,6 +2,10 @@ package com.skilldistillery.hpcharacters.data;
 
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
+
 import org.springframework.stereotype.Component;
 
 import com.skilldistillery.hpcharacters.entities.HPCharacter;
@@ -10,59 +14,80 @@ import com.skilldistillery.hpcharacters.entities.Type;
 
 
 @Component
+@Transactional
 public class HPCharDAOImpl implements HPCharDAO{
 
+	@PersistenceContext
+	private EntityManager em;
+	
 	@Override
 	public HPCharacter create(HPCharacter character) {
-		// TODO Auto-generated method stub
-		return null;
+		em.persist(character);
+		em.flush();
+		return character;
 	}
 
 	@Override
 	public HPCharacter findByID(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		return em.find(HPCharacter.class, id);
 	}
 
 	@Override
 	public List<HPCharacter> getAllCharacters() {
-		// TODO Auto-generated method stub
-		return null;
+		String query= "SELECT c FROM hp_characters c";
+		return em.createQuery(query, HPCharacter.class).getResultList();
 	}
 
 	@Override
 	public List<HPCharacter> getFromHouse(House house) {
-		// TODO Auto-generated method stub
-		return null;
+		String thisHouse= ""+house;
+		String query= "SELECT c FROM hp_characters c WHERE c.house = :house";
+		return em.createQuery(query, HPCharacter.class).setParameter("house", thisHouse).getResultList();
 	}
 
 	@Override
 	public List<HPCharacter> getFromType(Type type) {
-		// TODO Auto-generated method stub
-		return null;
+		String thisType= ""+type;
+		String query= "SELECT c FROM hp_characters c WHERE c.type= :type";
+		return em.createQuery(query, HPCharacter.class).setParameter("type", type).getResultList();
 	}
 
 	@Override
 	public List<HPCharacter> getAllDeathEaters() {
-		// TODO Auto-generated method stub
-		return null;
+		String query= "SELECT c FROM hp_characters c WHERE c.death_eater = 1";
+		return em.createQuery(query, HPCharacter.class).getResultList();
 	}
 
 	@Override
 	public List<HPCharacter> getAllNonDeathEaters() {
-		// TODO Auto-generated method stub
-		return null;
+		String query= "SELECT c FROM hp_characters c WHERE c.death_eater = 0";
+		return em.createQuery(query, HPCharacter.class).getResultList();
 	}
 
 	@Override
-	public HPCharacter edit(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	public HPCharacter edit(HPCharacter updated) {
+		HPCharacter character= em.find(HPCharacter.class, updated.getId());
+		if(character != null) {
+			character.setFirstName(updated.getFirstName());
+			character.setLastName(updated.getLastName());
+			character.setDescription(updated.getDescription());
+			character.setType(updated.getType());
+			character.setMale(updated.isMale());
+			character.setHouse(updated.getHouse());
+			character.setNumOfBooks(updated.getNumOfBooks());
+			character.setDead(updated.isDead());
+			character.setWasDeathEater(updated.isWasDeathEater());
+			character.setTrivia(updated.getTrivia());
+			character.setImageLink(updated.getImageLink());
+			em.persist(character);
+			em.flush();
+		}
+		return character;
 	}
 
 	@Override
 	public boolean delete(int id) {
-		// TODO Auto-generated method stub
+		// TODO Replace with enableds AFTER LUNCH
 		return false;
 	}
 
