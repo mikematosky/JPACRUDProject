@@ -12,7 +12,6 @@ public class HPCharController {
 	@Autowired
 	private HPCharDAO dao;
 	
-	//Home- Don't know if I really need this one, but we'll see
 	@RequestMapping(path = "/")
 	public String index() {
 		return "index";

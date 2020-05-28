@@ -1,6 +1,9 @@
 package com.skilldistillery.hpcharacters.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -14,16 +17,25 @@ public class HPCharacter {
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private int id;
 	
+	@Column(name="first_name")
 	private String firstName;
+	@Column(name="last_name")
 	private String lastName;
 	private String description;
+	@Enumerated(EnumType.STRING)
 	private Type type;
+	@Column(name="gender")
 	private boolean isMale;
+	@Enumerated(EnumType.STRING)
 	private House house;
+	@Column(name="number_of_books")
 	private Integer numOfBooks;
+	@Column(name="dead")
 	private boolean isDead;
+	@Column(name="death_eater")
 	private boolean wasDeathEater;
 	private String trivia;
+	@Column(name="image_link")
 	private String imageLink;
 	
 	

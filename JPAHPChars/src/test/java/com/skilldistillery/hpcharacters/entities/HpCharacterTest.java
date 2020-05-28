@@ -48,9 +48,9 @@ class HpCharacterTest {
 		assertEquals("Harry", harry.getFirstName());
 		assertEquals("Potter", harry.getLastName());
 		assertEquals("The boy who lived. Main protagonist and target of Death Eaters.", harry.getDescription());
-		assertEquals("Human", harry.getType());
+		assertEquals(Type.Human, harry.getType());
 		assertTrue(harry.isMale());
-		assertEquals(House.Gryffindore, harry.getHouse());
+		assertEquals(House.Gryffindor, harry.getHouse());
 		assertEquals(7, harry.getNumOfBooks());
 		assertEquals(false, harry.isDead());
 		assertEquals(false, harry.isWasDeathEater());

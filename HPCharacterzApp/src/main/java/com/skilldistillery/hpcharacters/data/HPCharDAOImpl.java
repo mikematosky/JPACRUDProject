@@ -2,12 +2,14 @@ package com.skilldistillery.hpcharacters.data;
 
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import com.skilldistillery.hpcharacters.entities.HPCharacter;
 import com.skilldistillery.hpcharacters.entities.House;
 import com.skilldistillery.hpcharacters.entities.Type;
 
 
-
+@Component
 public class HPCharDAOImpl implements HPCharDAO{
 
 	@Override
