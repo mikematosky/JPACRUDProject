@@ -1,5 +1,6 @@
 package com.skilldistillery.hpcharacters.data;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -29,39 +30,77 @@ public class HPCharDAOImpl implements HPCharDAO{
 
 	@Override
 	public HPCharacter findByID(int id) {
-		return em.find(HPCharacter.class, id);
+		HPCharacter character= em.find(HPCharacter.class, id);
+		if(character.isDisabled() == true) 
+			return null;
+		return character;
 	}
 
 	@Override
 	public List<HPCharacter> getAllCharacters() {
 		String query= "SELECT c FROM hp_characters c";
-		return em.createQuery(query, HPCharacter.class).getResultList();
+		List<HPCharacter> list= em.createQuery(query, HPCharacter.class).getResultList();
+		List<HPCharacter> filtered= new ArrayList<>(list);
+		for (HPCharacter c : list) {
+			if(c.isDisabled()== true) {
+				filtered.remove(c);
+			}
+		}
+		return filtered;
 	}
 
 	@Override
 	public List<HPCharacter> getFromHouse(House house) {
 		String thisHouse= ""+house;
 		String query= "SELECT c FROM hp_characters c WHERE c.house = :house";
-		return em.createQuery(query, HPCharacter.class).setParameter("house", thisHouse).getResultList();
+		List<HPCharacter> list = em.createQuery(query, HPCharacter.class).setParameter("house", thisHouse).getResultList();
+		List<HPCharacter> filtered= new ArrayList<>(list);
+		for (HPCharacter c : list) {
+			if(c.isDisabled()== true) {
+				filtered.remove(c);
+			}
+		}
+		return filtered;
 	}
 
 	@Override
 	public List<HPCharacter> getFromType(Type type) {
 		String thisType= ""+type;
 		String query= "SELECT c FROM hp_characters c WHERE c.type= :type";
-		return em.createQuery(query, HPCharacter.class).setParameter("type", type).getResultList();
+		List<HPCharacter> list= em.createQuery(query, HPCharacter.class).setParameter("type", thisType).getResultList();
+		List<HPCharacter> filtered= new ArrayList<>(list);
+		for (HPCharacter c : list) {
+			if(c.isDisabled()== true) {
+				filtered.remove(c);
+			}
+		}
+		return filtered;
 	}
 
 	@Override
 	public List<HPCharacter> getAllDeathEaters() {
 		String query= "SELECT c FROM hp_characters c WHERE c.death_eater = 1";
-		return em.createQuery(query, HPCharacter.class).getResultList();
+		List<HPCharacter> list= em.createQuery(query, HPCharacter.class).getResultList();
+		List<HPCharacter> filtered= new ArrayList<>(list);
+		for (HPCharacter c : list) {
+			if(c.isDisabled()== true) {
+				filtered.remove(c);
+			}
+		}
+		return filtered;
 	}
 
 	@Override
 	public List<HPCharacter> getAllNonDeathEaters() {
 		String query= "SELECT c FROM hp_characters c WHERE c.death_eater = 0";
-		return em.createQuery(query, HPCharacter.class).getResultList();
+		List<HPCharacter> list= em.createQuery(query, HPCharacter.class).getResultList();
+		List<HPCharacter> filtered= new ArrayList<>(list);
+		for (HPCharacter c : list) {
+			if(c.isDisabled()== true) {
+				filtered.remove(c);
+			}
+		}
+		return filtered;
 	}
 
 	@Override
@@ -79,6 +118,7 @@ public class HPCharDAOImpl implements HPCharDAO{
 			character.setWasDeathEater(updated.isWasDeathEater());
 			character.setTrivia(updated.getTrivia());
 			character.setImageLink(updated.getImageLink());
+			character.setNumOfBooks(updated.getNumOfBooks());
 			em.persist(character);
 			em.flush();
 		}
@@ -87,8 +127,13 @@ public class HPCharDAOImpl implements HPCharDAO{
 
 	@Override
 	public boolean delete(int id) {
-		// TODO Replace with enableds AFTER LUNCH
-		return false;
+		HPCharacter character= em.find(HPCharacter.class, id);
+		if(character != null) {
+			character.setDisabled(true);
+			em.persist(character);
+			em.flush();
+		}
+		return character.isDisabled();
 	}
 
 

@@ -37,6 +37,7 @@ public class HPCharacter {
 	private String trivia;
 	@Column(name="image_link")
 	private String imageLink;
+	private boolean disabled;
 	
 	
 	public HPCharacter() {}
@@ -53,6 +54,7 @@ public class HPCharacter {
 		this.isDead= isDead;
 		wasDeathEater= wasDE;
 		numOfBooks= books;
+		disabled=false;
 	}
 	
 	//Character with a Last Name
@@ -67,6 +69,7 @@ public class HPCharacter {
 		this.isDead= isDead;
 		wasDeathEater= wasDE;
 		numOfBooks= books;
+		disabled= false;
 	}
 	
 	@Override
@@ -74,9 +77,24 @@ public class HPCharacter {
 		return "HPCharacter [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", description="
 				+ description + ", type=" + type + ", isMale=" + isMale + ", house=" + house + ", numOfBooks="
 				+ numOfBooks + ", isDead=" + isDead + ", wasDeathEater=" + wasDeathEater + ", trivia=" + trivia
-				+ ", imageLink=" + imageLink + "]";
+				+ ", imageLink=" + imageLink + ", disabled=" + disabled + "]";
 	}
 	
+	public boolean isDisabled() {
+		return disabled;
+	}
+
+
+	public void setDisabled(boolean disabled) {
+		this.disabled = disabled;
+	}
+
+
+	public void setNumOfBooks(Integer numOfBooks) {
+		this.numOfBooks = numOfBooks;
+	}
+
+
 	public String getFirstName() {
 		return firstName;
 	}
