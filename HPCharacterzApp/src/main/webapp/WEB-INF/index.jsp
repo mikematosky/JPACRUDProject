@@ -21,7 +21,7 @@
 	<br>
 	<a href="create_edit.do">Create</a>
 	<br>
-	<a href="list.do">All Characters</a>
+	<a href="allCharacters.do">All Characters</a>
 	<br>
 	<a href="character_popout.do">Single Character</a>
 	<br>

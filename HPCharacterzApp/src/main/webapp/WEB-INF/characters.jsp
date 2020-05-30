@@ -31,15 +31,15 @@
 						<table class="table table-border">
 							<!-- |Image| fName lName-->
 							<tr>
-								<td><img src="${character.imageLink }" alt="${character.firstName}"></td>
+								<td><img src="${character.imageLink }" alt="${character.firstName}" height=150px width=150px></td>
 								<td><h3>${character.firstName }
-								<!-- All this fuss because I split name into two fields and one is possibly null -->
-								<c:if test="${not empty character.lastName}">
-									${character.lastName }
-								</c:if>
+									<!-- All this fuss because I split name into two fields and one is possibly null -->
+									<c:if test="${not empty character.lastName}">
+										${character.lastName }
+									</c:if>
 								</h3></td>
 							</tr>
-							<!-- Type= (type) Gender= (gender) House= (house) Death Eater= -->
+							 <!--  -->
 						</table>
 					</tr>
 				</c:forEach>

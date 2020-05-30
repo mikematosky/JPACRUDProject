@@ -38,7 +38,7 @@ public class HPCharDAOImpl implements HPCharDAO{
 
 	@Override
 	public List<HPCharacter> getAllCharacters() {
-		String query= "SELECT c FROM hp_characters c";
+		String query= "SELECT c FROM HPCharacter c";
 		List<HPCharacter> list= em.createQuery(query, HPCharacter.class).getResultList();
 		List<HPCharacter> filtered= new ArrayList<>(list);
 		for (HPCharacter c : list) {

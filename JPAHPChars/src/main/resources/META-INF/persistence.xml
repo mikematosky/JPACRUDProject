@@ -11,7 +11,7 @@
 
 	
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/hp_characters_db?useSSL=false&amp;useLegacyDatetimeCode=false&amp;serverTimezone=MST" />
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/hp_characters_db?useSSL=false&amp;useLegacyDatetimeCode=false&amp;serverTimezone=US/Eastern" />
       <property name="javax.persistence.jdbc.user" value="dumbledore"/>
       <property name="javax.persistence.jdbc.password" value="dumbledore" />
       <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
