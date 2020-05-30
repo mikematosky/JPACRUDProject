@@ -12,6 +12,8 @@
 <title>Harry Potter Characters</title>
 </head>
 <body>
+<div class="navbar"><jsp:include page="navbar.jsp"/></div>
+
 	<h1>Character Database</h1>
 	<br>
 	<hr>

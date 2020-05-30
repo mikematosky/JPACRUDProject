@@ -16,12 +16,14 @@
 <title>Characters</title>
 </head>
 <body>
+<div class="navbar"><jsp:include page="navbar.jsp"/></div>
+
 	<div class="character-list">
 		<table class="table table-dark table-hover">
 			<thead>
 				<tr>
 					<h2>
-						<th scope="col">Characters</th>
+						<th scope="col" class="text-centered">Characters</th>
 					</h2>
 				</tr>
 			</thead>
@@ -40,6 +42,9 @@
 								</h3></td>
 							</tr>
 							 <!--  -->
+							 <tr>
+							 	<td><p>${character.description }</p></td>
+							 </tr>
 						</table>
 					</tr>
 				</c:forEach>
