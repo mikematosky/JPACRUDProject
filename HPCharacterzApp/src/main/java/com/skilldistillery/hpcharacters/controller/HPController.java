@@ -12,9 +12,11 @@ public class HPController {
 	@Autowired
 	private HPCharDAO dao;
 	
-	@RequestMapping(path = "/")
+	@RequestMapping(path = {"/","","home.do"})
 	public String index() {
 		return "index";
 	}
+	
+	//Drawing a blank on how to set multiple paths
 	
 }

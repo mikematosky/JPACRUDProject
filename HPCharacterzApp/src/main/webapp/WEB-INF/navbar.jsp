@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark primary-color">
+<nav class="navbar navbar-expand-sm navbar-dark primary-color">
 
   <!-- Navbar brand -->
   <a class="navbar-brand" href="#">Navbar</a>
@@ -27,7 +27,7 @@
   <div class="collapse navbar-collapse" id="basicExampleNav">
   
   <ul>
-  	<li class= "nav-item"><a class="nav-link" href="#">Home</a>
+  	<li class= "nav-item"><a class="nav-link" href="home.do">Home</a>
   	<li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">Navigate</a>
@@ -48,6 +48,8 @@
         <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
       </div>
     </form>
+    </div>
+  </nav>
 
 
 
